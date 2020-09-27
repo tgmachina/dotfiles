@@ -21,7 +21,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'conormcd/matchindent.vim'
 Plugin 'yegappan/mru'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
