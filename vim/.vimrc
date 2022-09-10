@@ -22,6 +22,11 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'conormcd/matchindent.vim'
 Plugin 'yegappan/mru'
 Plugin 'dense-analysis/ale'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'sainnhe/sonokai'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-ruby/vim-ruby'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,6 +49,7 @@ set shiftwidth=2 tabstop=2 expandtab
 
 " Fold code
 set fdm=indent
+set foldnestmax=1
 
 " Wildmenu adds a visualizer for tab completions
 set wildmenu
@@ -54,8 +60,7 @@ set number
 
 " Appearance
 set t_Co=256
-set background=dark
-colorscheme molokai
+colorscheme sonokai
 
 " 80 column line highlight
 if exists('+colorcolumn')
@@ -69,6 +74,10 @@ syntax on
 " Status line
 set laststatus=2
 
+" Tab navigation
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
+
 " Nerdtree plugin
 let g:NERDTreeDirArrows=0
 map <C-y> :NERDTreeToggle<CR>
@@ -78,3 +87,10 @@ let g:airline#extensions#ale#enabled = 1
 
 " ALE
 let g:ale_completion_enabled = 1
+
+" Jedi
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#show_call_signatures = "2"
+
+" CtrlP
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
